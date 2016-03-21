@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>网易教育产品部</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- style="display:none;" -->
+	<!-- a mask, used when login window popped or video window popped  -->
+	<div class="m-mask f-pf" style="display:none;"></div>
+	<!-- login window -->
+	<div class="m-form f-pa" style="display:none;">
+		<div class="m-close f-fr" onclick="closeLogin()"></div>
+		<div class="loginTitle">登录网易云课堂</div>
+		<form action="http://www.163.com" method="get" autocomplete="off">
+		 	<input type="text" id="id" name="id" placeholder="账号" autofocus/>
+			<input type="password" id="password" name="password" placeholder="密码"/>
+		</form>
+		<button class="loginBtn" onclick="submit()">登录</button>
+		<div class="msg"></div>
+	</div>
+	<!-- video window -->
+	<div class="m-video f-pa" style="display:none;">
+		<div class="m-close f-fr" onclick="closeVideo()"></div>
+		<h1>请观看下面的视频</h1>
+		<video src="http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4" width="890" height="567" poster="images/VideoWindow.jpg" controls="controls">
+			your browser does not support the video tag
+		</video>
+	</div>
+	<!-- the top of page -->
+	<div class="g-top">
+		<div class="m-content">
+			<div class="m-ad f-fl">
+				<p class="f-fl">网易云课堂微专业，帮助你掌握专业技能，令你求职或加薪多一份独特优势！&nbsp;&nbsp;</p>
+				<a class="f-fl" href="http://study.163.com/smartSpec/intro.htm#/smartSpecIntro">立即查看&gt;</a>
+			</div>
+			<p class="m-disturb f-fr">不再提醒</p>
+			<div class="m-close f-fr" onclick="closeTop()"></div>
+		</div>
+	</div>
+	<!-- the head of page -->
+	<div class="g-hd">
+			<div class="m-headline f-fl" >
+				<h1 class="f-fl">EDU</h1>
+				<div class="f-fl f-pr line"></div>
+				<h1 class="f-fl">网易教育产品部</h1>
+				<div class="m-btn f-fl" onclick="attentionClick()">
+					<div class="f-fl"></div>
+					<span class="f-pr">关注</span>
+				</div>
+				<div class="u-followed f-fl">
+					<p class="f-fl">已关注</p>
+					<p class="f-fr" onclick="cancelAttention()">取消</p>
+				</div>
+				<p class="fans f-fl f-pr">粉丝&nbsp;45</p>
+			</div>
+			<div class="m-link f-fr">
+				<a class="f-fl" href="http://open.163.com/"  target="_blank">网易公开课</a>
+				<a class="f-fl" href="http://study.163.com/"  target="_blank">云课堂</a>
+				<a class="f-fl" href="http://www.icourse163.org/"  target="_blank">中国大学MOOC</a>
+				<a href="http://www.baidu.com" target="_blank" class="search"></a>
+			</div>
+	</div>
+	<!-- threee banners and three logos and five environment picture -->
+	<div class="g-bd1 f-pr">
+		<div class="m-img f-pr">
+			<a class="show" href="http://open.163.com/" target="_blank"><img src="images/banner1.jpg" alt="网易公开课"></a>
+			<a class="hide" href="http://study.163.com/" target="_blank"><img src="images/banner2.jpg" alt="云课堂"></a>	
+			<a class="hide" href="http://www.icourse163.org/" target="_blank"><img src="images/banner3.jpg" alt="中国大学MOOC"></a>	
+		
+			<div class="control f-pa">
+				<p class="black" data-index='0'></p>
+				<p class="white" data-index='1'></p>
+				<p class="white" data-index='2'></p>
+			</div>
+		</div>
+		<div class="m-logos f-cb">
+			<div class="m-logo m-logo0 f-fl">
+				<div class="u-logo f-fl"></div>
+				<div class="u-content">
+					<h2>网易公开课</h2>
+					<p>推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。</p>
+					<a href="http://open.163.com/" target="_blank">了解更多 &gt;</a>					
+				</div>
+			</div>
+			<div class="m-logo m-logo1 f-fl">
+				<div class="u-logo f-fl"></div>
+				<div class="u-content">
+					<h2>云课堂</h2>
+					<p>网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。</p>
+					<a href="http://study.163.com/" target="_blank">了解更多 &gt;</a>
+				</div>
+			</div>
+			<div class="m-logo m-logo2 f-fl">
+				<div class="u-logo f-fl"></div>
+				<div class="u-content">
+					<h2>中国大学MOOC</h2>
+					<p>是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。</p>
+					<a href="http://www.icourse163.org/" target="_blank">了解更多 &gt;</a>
+				</div>
+			</div>
+		</div>
+		<div class="m-env">
+			<img src="images/static1.jpg" alt="pic" class="">
+			<img src="images/static2.jpg" alt="pic" class="">
+			<img src="images/static3.jpg" alt="pic" class="">
+			<img src="images/static4.jpg" alt="pic" class="">
+			<img src="images/static5.jpg" alt="pic" class="">
+		</div>
+	</div>
+	<div class="g-bd2">
+		<div class="m-tab f-cb">
+			<div class="design f-fl"><h4 class="design">产品设计</h4></div>
+			<div class="language f-fl"><h4 class="language">编程语言</h4></div>
+		</div>
+		<div class="m-side f-fr">
+			<div class="m-intro">
+				<h3 class="intro">机构介绍</h3>
+				<h4>观看下面的视频来了解吧</h4>
+				<div class="m-link">
+					<div class="u-link" onclick="openVideo()"></div>
+				</div>
+			</div>
+			<div class="m-hot">
+				<h3>最热排行</h3>
+				<div class="m-hotlist">
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一从零到一从零到一</h4>
+							<p class="count">2</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+					<div class="u-item">
+						<img src="null" alt="hotcourse" width=50 height=50>
+						<div class="m-desc f-fr">
+							<h4 class="head">从零到一</h4>
+							<p class="count">0</p>
+						</div>
+					</div>
+
+
+
+					
+				</div>
+			</div>
+		</div>
+		<div class="m-courselist f-cb">
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="m-course f-fl f-pr">
+				<div class="u-snapshot">
+					<img src="null" alt="course" width=223 height=124>
+					<h5 class="ssname">null</h5>
+					<h6 class="ssprovider">null</h6>
+					<span class="sslearnercount"></span>
+					<p class="price"></p>
+					<div class="detail f-pa f-cb">
+						<img class="f-fl" src="null" alt="course" width=223 height=124>
+						<div class="top">
+							<h2 class="dename">null</h2>
+							<span class="detlearnercount"></span>
+							<p class="provider"></p>
+							<p class="categoryName"></p>
+						</div>
+						<div class="description bottom">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-page">
+			<ul class="f-cb">
+				<li class="f-fr" data-index="100"></li>
+				<li class="f-fr" data-index="8">8</li>
+				<li class="f-fr" data-index="7">7</li>
+				<li class="f-fr" data-index="6">6</li>
+				<li class="f-fr" data-index="5">5</li>
+				<li class="f-fr" data-index="4">4</li>
+				<li class="f-fr" data-index="3">3</li>
+				<li class="f-fr" data-index="2">2</li>
+				<li class="current f-fr" data-index="1">1</li>
+				<li class="f-fr" data-index="0"></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="g-ft">
+		<div class="fix f-cb">
+			<div class="m-netease f-fl">
+				<div class="m-headline f-cb">
+					<h1 class="f-fl">EDU</h1>
+					<div class="f-fl f-pr line"></div>
+					<h1 class="f-fl">网易教育产品部</h1>
+				</div>
+				<p>©2014 icourse163.org 浙ICP备08114786号-1</p>
+				<p>icourses.cn 京ICP备12020869号-2 京公网安备110102000459-2</p>
+			</div>
+			<div class="m-info f-fr">
+				<div class="m-link f-fl">
+					<p>友情链接：</p>
+					<a href="http://open.163.com/"  target="_blank">网易公开课</a><br/>
+					<a href="http://study.163.com/"  target="_blank">网易云课堂</a><br/>
+					<a href="http://www.icourse163.org/" target="_blank">中国大学MOOC</a>
+				</div>
+				<div class="m-we f-fl">
+					<p>我们：</p>
+					<a href="http://www.youdao.com" target="_blank">关于</a><br/>
+					<a href="http://www.youdao.com" target="_blank">联系</a><br/>
+					<a href="http://www.youdao.com" target="_blank">关注</a>
+					<a href="http://www.youdao.com" target="_blank" class="twitter"></a>
+				</div>
+				<div class="m-more f-fl">
+					<p>更多：</p>
+					<a href="http://www.youdao.com" target="_blank">常见问题</a><br/>
+					<a href="http://www.youdao.com" target="_blank">意见反馈</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="compare" style="display:none;">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+	<div class="compare1" style="display:none;">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="js/md5.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
