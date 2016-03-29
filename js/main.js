@@ -312,7 +312,13 @@ var loadCourse = (function(){
 })();
 
 function getCoursePerPage(){
-    return 20;
+    var twenty = document.getElementById("signal");
+    if (window.getComputedStyle(twenty).display == "none"){
+        return 15;
+    }else{
+        return 20;
+    }
+    
 }
 
 (function(){
