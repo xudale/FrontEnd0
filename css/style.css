@@ -53,6 +53,7 @@ margin: auto 14px auto 31px;background: url(../images/Attention.png) 0px 0px;pad
 .g-hd .m-link a:nth-child(2){margin-left: 54px;margin-right: 56px;}
 .g-hd .m-link .search{background: url(../images/SmallIcon.png) 0 -25px;width: 19px;height: 19px;display: inline-block;margin-left: 30px;margin-right: 14px; }
 .g-hd .m-link .search:hover{background: url(../images/SmallIcon.png) -25px -25px;}
+
 .g-bd1 img{width: 100%;height: 460px;}
 .g-bd1 a.hide{display: none;}
 .g-bd1 a.show{display: block;}
@@ -116,7 +117,7 @@ padding: 22px 36px 25px 23px;font:14px/24px "微软雅黑";}
 .g-bd2 .m-page li.current{color: #39a030} 
 .g-bd2 .m-side{width: 225px;outline: 1px red solid;}
 
-.g-bd2 .m-side .m-intro h3{height: 55px;box-sizing:border-box;background-color: #fff;ont: 16px/16px "微软雅黑";
+.g-bd2 .m-side .m-intro h3{height: 55px;box-sizing:border-box;background-color: #fff;font: 16px/16px "微软雅黑";
 	padding-top: 19px;padding-left: 21px;}
 .g-bd2 .m-side .m-intro h3,.g-bd2 .m-side .m-intro h4,.g-bd2 .m-side .m-intro .m-link,.g-bd2 .m-side .m-hot h3,
 	.g-bd2 .m-side .m-hot .m-hotlist{border-left: 1px solid #ecebeb;border-right: 1px solid #ecebeb;}
@@ -153,7 +154,22 @@ padding: 22px 36px 25px 23px;font:14px/24px "微软雅黑";}
 .g-ft .m-info a:hover{text-decoration: underline;}
 .g-ft .m-info .m-we{margin-left: 99px;margin-right: 73px;}
 
-
+@media screen and (max-width: 1205px){
+	.g-top .m-content,.g-hd,.g-bd1 .m-logos,.g-bd2,.g-ft .fix{width: 950px;}
+	.g-bd1 .m-logos .m-logo{width: 275px}
+	.g-bd1 .m-logos .u-content{margin-left: 95px;margin-right: 0px;}
+	.g-bd1 .m-logos .m-logo:nth-child(2){margin-left: 62px;margin-right: 62px;}
+	.g-bd1 .m-logos .m-logo{outline: 1px red solid;}
+	.g-bd2 .m-courselist{width:725px;}
+	.g-bd2 .m-courselist .m-course{width: 223px;margin-right: 18px;outline: 1px red solid;}
+	.g-bd1 .m-env{width: 1400px;margin-left: -104px;margin-right: -100px;}
+	.g-bd2 .m-courselist .m-course:nth-child(n+16){display: none;}
+	.g-bd2 .m-courselist .u-snapshot h5,.g-bd2 .m-courselist .u-snapshot h6,.g-bd2 .m-courselist .u-snapshot span,
+	.g-bd2 .m-courselist .u-snapshot p{margin: 9px auto 9px 6px;}	
+	.g-ft .fix{width: 950px}
+	.g-ft .m-netease{margin-top: 92px;margin-left: 0;}
+	.g-ft .m-info{margin-top: 77px;margin-right: 0;} 
+}
 
 
 
