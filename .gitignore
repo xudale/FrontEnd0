@@ -6,7 +6,7 @@
 
 c.js
 b.css
-
+.DS_Store
 # Prerequisites
 *.d
 
